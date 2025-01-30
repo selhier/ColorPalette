@@ -4,13 +4,13 @@ import ColorBox from './components/ColorBox';
 import './App.css';
 
 const generateHarmoniousColors = (baseColor) => {
-  return chroma.scale([baseColor, chroma(baseColor).darken(2)]).mode('lab').colors(5);
+  return chroma.scale([baseColor, chroma(baseColor).set('hsl.h', '+120')]).mode('lab').colors(5);
 };
 
 const generateHarmoniousGradients = (baseColor) => {
-  const colors = chroma.scale([baseColor, chroma(baseColor).darken(2)]).mode('lab').colors(5);
+  const colors = chroma.scale([baseColor, chroma(baseColor).set('hsl.h', '+120')]).mode('lab').colors(5);
   return colors.map((color, index) => {
-    const nextColor = colors[index + 1] || colors[0];
+    const nextColor = colors[(index + 1) % colors.length];
     return {
       gradient: `linear-gradient(135deg, ${color}, ${nextColor})`,
       colors: [color, nextColor]
@@ -44,7 +44,7 @@ const App = () => {
           <ColorBox key={index} color={color} />
         ))}
         {gradients.map((gradient, index) => (
-          <ColorBox key={index} color={gradient.gradient} />
+          <ColorBox key={index} color={gradient.gradient} gradientColors={gradient.colors} />
         ))}
       </div>
     </div>
