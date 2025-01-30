@@ -68,3 +68,15 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 768px) {
+  .color-box {
+    width: 100px; /* Ajusta el ancho para pantallas más pequeñas */
+    height: 200px; /* Ajusta la altura para pantallas más pequeñas */
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0; /* Ajusta el margen para pantallas más pequeñas */
+  }
+}
