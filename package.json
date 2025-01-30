@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "git add docs && git commit -m 'Deploy to GitHub Pages' && git push"
+    "deploy": "git add docs && git commit -m \"Deploy to GitHub Pages\" && git push"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
