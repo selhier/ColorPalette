@@ -11,7 +11,10 @@ const generateHarmoniousGradients = (baseColor) => {
   const colors = chroma.scale([baseColor, chroma(baseColor).darken(2)]).mode('lab').colors(5);
   return colors.map((color, index) => {
     const nextColor = colors[index + 1] || colors[0];
-    return `linear-gradient(135deg, ${color}, ${nextColor})`;
+    return {
+      gradient: `linear-gradient(135deg, ${color}, ${nextColor})`,
+      colors: [color, nextColor]
+    };
   });
 };
 
@@ -41,7 +44,7 @@ const App = () => {
           <ColorBox key={index} color={color} />
         ))}
         {gradients.map((gradient, index) => (
-          <ColorBox key={index} color={gradient} />
+          <ColorBox key={index} color={gradient.gradient} />
         ))}
       </div>
     </div>
