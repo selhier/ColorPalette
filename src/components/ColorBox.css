@@ -1,0 +1,12 @@
+.color-box {
+  width: 150px; /* Ajusta el ancho según sea necesario */
+  height: 300px; /* Ajusta la altura según sea necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin: 10px; /* Espaciado entre los rectángulos */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
