@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: 'ColorPalette/', // Reemplaza 'tu-repositorio' con el nombre de tu repositorio
+  base: process.env.NODE_ENV === 'production' ? '/ColorPalette/' : '/',
   build: {
-    outDir: 'docs', // Configura la carpeta de salida a 'docs'
+    outDir: 'docs',
   },
 });
